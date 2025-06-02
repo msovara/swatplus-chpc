@@ -1,0 +1,18 @@
+#!/bin/bash -l  
+#PBS -A <project>                  # CHPC project account (REQUIRED)
+#PBS -l select=4:mpiprocs=24       # 4 nodes, 24 cores/node  
+#PBS -l walltime=06:00:00          # Max runtime  
+#PBS -N swatplus_sim               # Job name  
+#PBS -j oe                         # Merge stdout/stderr  
+#PBS -m e                          # Email on job end  
+#PBS -M <email>@domain.com  
+
+# Load modules
+module use /apps/chpc/scripts/modules
+module load earth/swatplus/2025.03
+
+# Navigate to project directory  
+cd $PBS_O_WORKDIR  
+
+# Run SWAT+ (MPI)  
+mpirun -np 96 swatplus_exe
