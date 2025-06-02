@@ -168,4 +168,6 @@ mpirun -np 96 swatplus_exe
 
 ---
 
-**Maintainer:** Mthetho Vuyo Sovara
+**Maintainer:** Mthetho Vuyo Sovara 
+
+Got issues, submit a CHPC Helpdesk ticket: https://users.chpc.ac.za/helpdesk/tickets/submit/
