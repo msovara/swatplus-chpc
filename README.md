@@ -128,12 +128,14 @@ Lengau-Specific Tips
 PBS Script (```run_swatplus.pbs```)
 ```bash
 #!/bin/bash -l  
-#PBS -A <project>                  # CHPC project account (REQUIRED)
-#PBS -l select=4:mpiprocs=24       # 4 nodes, 24 cores/node  
-#PBS -l walltime=06:00:00          # Max runtime  
-#PBS -N swatplus_sim               # Job name  
-#PBS -j oe                         # Merge stdout/stderr  
-#PBS -m e                          # Email on job end  
+#PBS -l select=10:ncpus=24:mpiprocs=24:nodetype=haswell_reg
+#PBS -P PRJT1234
+#PBS -q normal
+#PBS -l walltime=4:00:00
+#PBS -N swatplus_sim               # Job name 
+#PBS -o /mnt/lustre/users/USERNAME/swatplus_tests/swatplus.out
+#PBS -e /mnt/lustre/users/USERNAME/swatplus_tests/swatplus.err
+#PBS -m abe                        # Email on job end  
 #PBS -M <email>@domain.com  
 
 # Load modules
