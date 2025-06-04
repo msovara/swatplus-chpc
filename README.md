@@ -146,7 +146,7 @@ module load earth/swatplus/2025.03
 cd $PBS_O_WORKDIR  
 
 # Run SWAT+ (MPI)  
-mpirun -np 96 swatplus_exe 
+mpirun -np 24 swatplus_exe 
 ```
 ---
 
